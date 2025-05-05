@@ -10,7 +10,8 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader: ()=>fetch('/appsInfos.json')
             },
             {
                 path: "profile",

@@ -1,6 +1,6 @@
 [
-    { "id": 1, "name": "Trending" },
-    { "id": 2, "name": "Productivity" },
-    { "id": 3, "name": "Healthcare" },
-    { "id": 4, "name": "Educational" }
+    { "id": 1, "name": "Trending Apps" },
+    { "id": 2, "name": "Productivity Apps" },
+    { "id": 3, "name": "Healthcare Apps" },
+    { "id": 4, "name": "Educational Apps" }
   ]
