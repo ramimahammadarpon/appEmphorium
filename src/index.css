@@ -23,3 +23,6 @@ a.active {
 *{
   font-family: "Poppins", sans-serif;
 }
+.swiper-button-prev, .swiper-button-next{
+  color: #E9D8A6 !important;
+}
