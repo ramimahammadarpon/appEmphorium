@@ -9,7 +9,6 @@ const CardsContainer = ({datas, category}) => {
         const filteredData = datas.filter(data => data.category_id===category.id);
         setData(filteredData);
         if(category.id === 1){
-            console.log("yess");
             const filteredData = [...datas].sort((a, b) => b.ratings - a.ratings).slice(0,4);
             setData(filteredData);
         }

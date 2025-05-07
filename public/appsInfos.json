@@ -11,9 +11,11 @@
       "description": "A productivity app that helps you block distractions and schedule deep work sessions.",
       "features": ["Pomodoro Timer", "Distraction Blocker", "Daily Goals", "Focus Analytics"],
       "reviews": [
-        "Changed my workflow completely!",
-        "Best productivity tool I’ve used.",
-        "Love the UI and features."
+        {
+          "user": "coder_nadia",
+          "rating": 5,
+          "comment": "Best app for beginners! The lessons are super easy to follow and engaging."
+        }
       ]
     },
     {
@@ -28,9 +30,11 @@
       "description": "Track your medication schedule and health vitals seamlessly.",
       "features": ["Medication Reminders", "Vitals Tracker", "Doctor Reports", "Pill Identification"],
       "reviews": [
-        "Very helpful for my elderly parents.",
-        "Great interface and reminders!",
-        "Must-have app for managing medication."
+        {
+          "user": "tech_guru88",
+          "rating": 4,
+          "comment": "Clean interface and well-structured. Could use more advanced features though."
+        }
       ]
     },
     {
@@ -45,9 +49,11 @@
       "description": "Helps students stay organized with notes, flashcards, and schedules.",
       "features": ["Flashcard Maker", "To-Do Scheduler", "Study Groups", "Daily Quiz"],
       "reviews": [
-        "Perfect app for students.",
-        "I improved my grades!",
-        "Great for time management."
+        {
+          "user": "health_maniac",
+          "rating": 5,
+          "comment": "This app changed my lifestyle! I track my meals and workouts daily."
+        }
       ]
     },
     {
@@ -62,9 +68,11 @@
       "description": "Create and manage tasks efficiently with QuickTask.",
       "features": ["Task Timer", "Recurring Tasks", "Project Boards", "Deadline Reminders"],
       "reviews": [
-        "I use it every day.",
-        "Really intuitive and powerful.",
-        "Helps me track my workflow."
+        {
+          "user": "dev_daniel",
+          "rating": 3,
+          "comment": "It's okay, but I experienced syncing issues across devices."
+        }
       ]
     },
     {
@@ -79,9 +87,11 @@
       "description": "Real-time heart rate and ECG tracking app for fitness and health.",
       "features": ["Live ECG", "Heart Rate History", "Fitness Goals", "Share with Doctor"],
       "reviews": [
-        "Saved my life once.",
-        "Extremely accurate readings.",
-        "Looks very professional."
+        {
+          "user": "study_buddy",
+          "rating": 5,
+          "comment": "Exactly what I needed for my exam prep. Love the quizzes!"
+        }
       ]
     },
     {
@@ -96,9 +106,16 @@
       "description": "Learn new languages easily through games, voice recognition and lessons.",
       "features": ["Interactive Lessons", "Pronunciation Check", "Progress Tracker", "Multilingual Support"],
       "reviews": [
-        "Great way to learn a language.",
-        "Fun and educational.",
-        "Good balance of theory and practice."
+        {
+          "user": "yoga_with_ana",
+          "rating": 4,
+          "comment": "Great for meditation and daily mindfulness, but the free version is limited."
+        },
+        {
+          "user": "language_lover",
+          "rating": 5,
+          "comment": "I've picked up 3 new languages thanks to this app. Super fun and addictive!"
+        }
       ]
     },
     {
@@ -113,9 +130,11 @@
       "description": "Boost work efficiency and mental clarity with WorkZen routines.",
       "features": ["Focus Music", "Breathing Exercises", "Task Lists", "Work Break Timer"],
       "reviews": [
-        "Keeps me balanced during work.",
-        "Really calms my mind.",
-        "Great UX!"
+        {
+          "user": "sneaky_student",
+          "rating": 5,
+          "comment": "I learned an entire subject for free. Thank you for making this accessible!"
+        }
       ]
     },
     {
@@ -130,9 +149,16 @@
       "description": "Scan food items for calorie and nutrition breakdown instantly.",
       "features": ["Barcode Scanner", "Nutrition Charts", "Calorie Counter", "Meal Recommendations"],
       "reviews": [
-        "Very helpful at grocery shopping.",
-        "Eye-opening results!",
-        "Well designed and easy to use."
+        {
+          "user": "sleepy_owl99",
+          "rating": 4,
+          "comment": "The sleep tracker is quite accurate. I just wish it integrated with other apps."
+        },
+        {
+          "user": "tech_guru88",
+          "rating": 4,
+          "comment": "Clean interface and well-structured. Could use more advanced features though."
+        }
       ]
     },
     {
@@ -147,9 +173,11 @@
       "description": "Online learning platform for school, college and career courses.",
       "features": ["Video Tutorials", "Certification", "Live Classes", "Assignments"],
       "reviews": [
-        "My go-to for upskilling.",
-        "Best online courses.",
-        "Love the teachers."
+        {
+          "user": "project_alpha",
+          "rating": 5,
+          "comment": "Perfect for task management in teams. We use it for all our projects."
+        }
       ]
     },
     {
@@ -164,9 +192,16 @@
       "description": "A minimalist to-do and habit tracking app.",
       "features": ["Minimal UI", "Daily Planner", "Streak Tracking", "Reminders"],
       "reviews": [
-        "Perfectly clean interface.",
-        "Satisfying to use daily.",
-        "Helps me form good habits."
+        {
+          "user": "language_lover",
+          "rating": 5,
+          "comment": "I've picked up 3 new languages thanks to this app. Super fun and addictive!"
+        },
+        {
+          "user": "study_buddy",
+          "rating": 5,
+          "comment": "Exactly what I needed for my exam prep. Love the quizzes!"
+        }
       ]
     },
     {
@@ -181,9 +216,11 @@
       "description": "Tracks your physical activity, steps, and heart health in real-time.",
       "features": ["Step Counter", "Workout Logs", "Heart Rate Monitor", "Calorie Burn Charts"],
       "reviews": [
-        "Tracks my fitness goals perfectly.",
-        "Integrated well with my watch.",
-        "Easy to read dashboard."
+        {
+          "user": "mama_mia45",
+          "rating": 4,
+          "comment": "Great for tracking my cycle. Very intuitive and accurate."
+        }
       ]
     },
     {
@@ -198,9 +235,16 @@
       "description": "Compete with friends on quizzes across thousands of topics.",
       "features": ["Live Quiz Rooms", "Leaderboards", "Question Bank", "Achievements"],
       "reviews": [
-        "So addictive!",
-        "Fun for all ages.",
-        "Educational and entertaining."
+        {
+          "user": "code_monkey_404",
+          "rating": 3,
+          "comment": "Has potential, but needs performance improvements and bug fixes."
+        },
+        {
+          "user": "coder_nadia",
+          "rating": 5,
+          "comment": "Best app for beginners! The lessons are super easy to follow and engaging."
+        }
       ]
     }
   ]

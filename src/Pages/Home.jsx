@@ -9,7 +9,6 @@ const sectionCategories = fetch('/categories.json').then(res => res.json());
 
 const Home = () => {
     const categoriesData = use(sectionCategories); 
-    console.log(categoriesData);
     const datas = useLoaderData();
 
     return (
