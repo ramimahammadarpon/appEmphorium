@@ -1,10 +1,46 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router';
+import { AuthContext } from '../Context/AuthContext';
 
 const Registration = () => {
+
+    const {registerWithMail, setUser, updateInfo} = useContext(AuthContext);
+
+    const handleRegistration = e => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const photoUrl = e.target.photoUrl.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(name, photoUrl, email, password);
+        registerWithMail(email, password).then(result=>{
+            updateInfo({displayName:name, photoURL:photoUrl})
+            setUser({...result.user, displayName:name, photoURL: photoUrl})
+        }).catch(error=> console.log(error));
+
+    }
     return (
-        <div>
-            This is registration
+        <div className="hero min-h-[85vh]">
+        <div className=" flex-col lg:flex-row-reverse w-11/12">
+          <div className="card bg-base-100 w-full max-w-sm shadow-2xl border">
+            <div className="card-body">
+            <h1 className="text-2xl font-bold">Register now!</h1>
+              <form onSubmit={handleRegistration} className="fieldset">
+                <label className="label">Full Name</label>
+                <input type="text" className="input" name="name" placeholder="Full Name" required />
+                <label className="label">Photo URL</label>
+                <input type="text" className="input" name="photoUrl" placeholder="Photo URL" required />
+                <label className="label">Email</label>
+                <input type="email" className="input" name="email" placeholder="Email" required />
+                <label className="label">Password</label>
+                <input type="password" className="input" name="password" placeholder="Password" required />
+                <button className="btn btn-neutral mt-4">Register</button>
+              </form>
+              <p>Already Have an Account? <Link className="text-blue-600 underline font-semibold" to="/authentication/login">Login Now</Link></p>
+            </div>
+          </div>
         </div>
+      </div>
     );
 };
 

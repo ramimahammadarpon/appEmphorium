@@ -7,6 +7,7 @@ import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Pages/Login";
 import Registration from "../Pages/Registration";
 import AppDetails from "../Pages/AppDetails";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -16,7 +17,8 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element:<Home></Home>,
-                loader: ()=>fetch('/appsInfos.json')
+                loader: ()=>fetch('/appsInfos.json'),
+                hydrateFallbackElement: <div className='min-h-[80vh] flex justify-center items-center'><span className="loading loading-bars loading-xl"></span></div>
             },
             {
                 path: "profile",
@@ -24,8 +26,9 @@ export const router = createBrowserRouter([
             },
             {
                 path:'app-details/:id',
-                element:<AppDetails></AppDetails>,
-                loader:()=> fetch('/appsInfos.json')
+                element:<PrivateRoute><AppDetails></AppDetails></PrivateRoute>,
+                loader:()=> fetch('/appsInfos.json'),
+                hydrateFallbackElement: <div className='min-h-[80vh] flex justify-center items-center'><span className="loading loading-bars loading-xl"></span></div>
             }
         ]
     },

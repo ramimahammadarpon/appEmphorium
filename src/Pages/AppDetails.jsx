@@ -1,8 +1,17 @@
 import { FaBookOpen, FaDownload, FaStar } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router";
 import ReviewsSection from "../Components/ReviewsSection";
+import { useState } from "react";
 
 const AppDetails = () => {
+  const [installed, setInstalled] = useState([]);
+  const [button, setButton] = useState(true);
+  console.log(installed);
+  const handleInstall = () => {
+    const installedArr = [...installed, "yes"];
+    setInstalled(installedArr);
+    setButton(!button);
+  }
   const datas = useLoaderData();
   const { id } = useParams();
   const singleData = datas.find((data) => data.id == id);
@@ -53,14 +62,14 @@ const AppDetails = () => {
             </div>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Install</button>
+            <button onClick={handleInstall} className="btn btn-primary">{button? "Install": "Uninstall"}</button>
           </div>
         </div>
       </div>
 
       {/* Review Section */}
 
-      <ReviewsSection singleData={singleData}></ReviewsSection>
+      <ReviewsSection installed={installed} singleData={singleData}></ReviewsSection>
     </div>
   );
 };

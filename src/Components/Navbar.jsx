@@ -1,8 +1,17 @@
-import React from "react";
-import { Link, NavLink } from "react-router";
-import user from "../assets/user.png";
+import React, { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router";
+import userImg from "../assets/user.png";
+import { AuthContext } from "../Context/AuthContext";
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logOut().then(()=>{
+      console.log("Your Logged Out");
+      navigate('/');
+    }).catch(error=>console.log(error));
+  }
   const links = (
     <>
       <li>
@@ -53,10 +62,15 @@ const Navbar = () => {
         <ul className="menu menu-horizontal text-primary px-1 space-x-9">{links}</ul>
       </div>
       <div className="navbar-end">
-        <div className="flex items-center gap-1">
-            <img className="w-12" src={user} alt="" />
-            <Link to="/authentication/login" className="btn btn-primary text-accent">Login</Link>
-            </div>
+        {
+          user? <div className="flex items-center gap-1">
+          <img className="w-8 h-8 rounded-full" src={user.photoURL} alt="" />
+          <button onClick={handleLogout} className="btn btn-primary text-accent">Logout</button>
+          </div> : <div className="flex items-center gap-1">
+          <img className="w-12 rounded-full" src={userImg} alt="" />
+          <Link to="/authentication/login" className="btn btn-primary text-accent">Login</Link>
+          </div>
+        }
       </div>
     </div>
   );
