@@ -4,7 +4,7 @@ import { AuthContext } from "../Context/AuthContext";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-    const {loginWithEmail, setUser, googleSignIn} = useContext(AuthContext);
+    const {loginWithEmail, setUser, googleSignIn, forgetPassword} = useContext(AuthContext);
     const navigate = useNavigate();
     useEffect(()=>{
       document.title = "App Emphorium | Login"
@@ -30,6 +30,12 @@ const Login = () => {
           navigate('/');
         }).catch(error=> console.log(error));
     }
+    const handleForgetPassword = () => {
+      const email = document.getElementById("email").value;
+      forgetPassword(email).then(()=>{
+        console.log("password reset done");
+      }).catch(error=>console.log(error));
+    }
   return (
     <div className="hero min-h-[85vh]">
       <div className="w-11/12 mx-auto">
@@ -38,11 +44,11 @@ const Login = () => {
           <h1 className="text-2xl font-bold">Login now!</h1>
             <form onSubmit={handleLogin} className="fieldset">
               <label className="label">Email</label>
-              <input type="email" className="input" name="email" placeholder="Email" />
+              <input id="email" type="email" className="input" name="email" placeholder="Email" />
               <label className="label">Password</label>
               <input type="password" className="input" name="password" placeholder="Password" />
-              <div>
-                <a className="link link-hover">Forgot password?</a>
+              <div className="mt-3">
+                <a onClick={handleForgetPassword} className="link link-hover">Forgot password?</a>
               </div>
               <button className="btn btn-primary mt-4">Login</button>
             </form>

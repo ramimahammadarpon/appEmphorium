@@ -13,15 +13,15 @@ const SwiperCard = ({ data }) => {
           className="w-full h-full object-cover rounded-2xl"
         />
       </figure>
-      <div className="card-body px-12">
-        <h2 className="card-title text-2xl text-primary">{data.name}</h2>
+      <div className="card-body px-12 lg:items-center lg:justify-center">
+        <h2 className="card-title text-2xl lg:text-3xl text-primary">{data.name}</h2>
         <div>
-          <p className="text-base-300 text-base">{data.description}</p>
+          <p className="text-base-300 lg:text-xl lg:mx-auto text-base">{data.description}</p>
           <div className="flex justify-between mt-2">
-            <p className="text-base-300 flex text-lg font-semibold items-center gap-1"><FaStar size={14} color="orange" />{data.ratings} </p>
-            <p className="text-base-300 text-lg font-semibold flex items-center gap-1"><IoBookSharp color="#E9D8A6" size={14} /> {data.releasedYear}</p>
+            <p className="text-base-300 flex lg:justify-center text-lg font-semibold items-center gap-1"><FaStar size={14} color="orange" />{data.ratings} </p>
+            <p className="text-base-300 text-lg font-semibold flex lg:justify-center items-center gap-1"><IoBookSharp color="#E9D8A6" size={14} /> {data.releasedYear}</p>
           </div>
-          <p className="text-base-300 text-lg font-semibold flex items-center gap-1"><FaDownload size={14} color="#E9D8A6" /> {data.downloads}</p>
+          <p className="text-base-300 text-lg font-semibold flex lg:mt-5 lg:justify-center  items-center gap-1"><FaDownload size={14} color="#E9D8A6" /> {data.downloads}</p>
         </div>
       </div>
     </Link>

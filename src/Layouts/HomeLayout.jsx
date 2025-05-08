@@ -13,7 +13,7 @@ const HomeLayout = () => {
             <main className='my-5 mx-5 lg:my-10 lg:mx-20'>
                 <Outlet></Outlet>
             </main>
-            <footer>
+            <footer className='lg:py-16 py-10 bg-[#001524]'>
                 <Footer></Footer>
             </footer>
         </div>

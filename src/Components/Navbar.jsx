@@ -4,15 +4,17 @@ import userImg from "../assets/user.png";
 import { AuthContext } from "../Context/AuthContext";
 
 const Navbar = () => {
-  const {user, logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   // console.log(user?.photoURL);
   const navigate = useNavigate();
   const handleLogout = () => {
-    logOut().then(()=>{
-      console.log("Your Logged Out");
-      navigate('/');
-    }).catch(error=>console.log(error));
-  }
+    logOut()
+      .then(() => {
+        console.log("Your Logged Out");
+        navigate("/");
+      })
+      .catch((error) => console.log(error));
+  };
   const links = (
     <>
       <li>
@@ -55,27 +57,43 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <p className="font-light text-xl lg:text-3xl text-primary">
+        <Link to="/" className="font-light text-xl lg:text-3xl text-primary">
           App<span className="font-bold text-secondary">Emporium</span>
-        </p>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal text-primary px-1 space-x-9">{links}</ul>
+        <ul className="menu menu-horizontal text-primary px-1 space-x-9">
+          {links}
+        </ul>
       </div>
       <div className="navbar-end">
-        {
-          user? <div className="flex items-center gap-3">
-          <img className="w-8 h-8 rounded-full" src={user.photoURL? user.photURL: userImg} alt="" />
-          <div className="hidden lg:block bg-slate-200 px-3 py-1 rounded-2xl">
-            <p className="font-semibold">{user.displayName}</p>
-            <p className="text-slate-500">{user.email}</p>
+        {user ? (
+          <Link to="/profile" className="flex items-center gap-3">
+            <div className="relative group">
+              <img
+                className="w-8 h-8 rounded-full"
+                src={user.photoURL ? user.photURL : userImg}
+                alt=""
+              />
+              <p className="absolute opacity-0 group-hover:opacity-100 text-primary left-1/2 -translate-x-1/2 transition">{user.displayName}</p>
             </div>
-          <button onClick={handleLogout} className="btn btn-primary text-accent">Logout</button>
-          </div> : <div className="flex items-center gap-3">
-          <Link to="/authentication/login" className="btn btn-primary text-accent">Login</Link>
-          <Link to="/authentication/registration" className="btn btn-secondary text-blue-100">Registration</Link>
+            <button
+              onClick={handleLogout}
+              className="btn btn-primary text-accent"
+            >
+              Logout
+            </button>
+          </Link>
+        ) : (
+          <div className="flex items-center gap-3">
+            <Link
+              to="/authentication/login"
+              className="btn btn-primary text-accent"
+            >
+              Login
+            </Link>
           </div>
-        }
+        )}
       </div>
     </div>
   );

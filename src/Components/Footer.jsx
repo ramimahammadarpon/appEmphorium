@@ -7,7 +7,7 @@ import gmail from '../assets/gmail.png';
 
 const Footer = () => {
   return (
-    <div className="bg-[#001524] h-[30vh] flex flex-col items-center p-12">
+    <div className="flex flex-col items-center">
       <p className="font-light text-2xl text-primary">
         App<span className="font-bold text-secondary">Emporium</span>
       </p>
