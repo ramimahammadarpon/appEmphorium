@@ -1,0 +1,53 @@
+[
+    {
+      "id": "faq001",
+      "question": "What is this App Store?",
+      "answer": "This App Store is a digital platform where you can discover, explore, and download various mobile and web applications across different categories."
+    },
+    {
+      "id": "faq002",
+      "question": "Is it free to download apps from this App Store?",
+      "answer": "Yes, most apps are free to download. However, some may include in-app purchases or premium features."
+    },
+    {
+      "id": "faq003",
+      "question": "How do I book or install an app?",
+      "answer": "Simply click on the 'Install' or 'Download' button on the app's detail page. It will guide you through the installation process."
+    },
+    {
+      "id": "faq004",
+      "question": "How are the apps categorized?",
+      "answer": "Apps are grouped into categories such as Productivity, Healthcare, Educational, and Trending to help users find what they need easily."
+    },
+    {
+      "id": "faq005",
+      "question": "What makes an app 'Trending'?",
+      "answer": "Apps with the highest ratings or download counts within a certain timeframe are automatically marked as Trending."
+    },
+    {
+      "id": "faq006",
+      "question": "Can I rate or review an app?",
+      "answer": "Yes, after using an app, you can leave a rating and review to help other users make informed decisions."
+    },
+    {
+      "id": "faq007",
+      "question": "Are all apps safe to use?",
+      "answer": "We vet all listed apps for quality and security. However, always check permissions and reviews before installing."
+    },
+    {
+      "id": "faq008",
+      "question": "Can I use this App Store on any device?",
+      "answer": "Yes, our App Store is designed to be responsive and works on most devices including mobiles, tablets, and desktops."
+    },
+    {
+      "id": "faq009",
+      "question": "How often is the App Store updated?",
+      "answer": "New apps and updates are added regularly to keep the store fresh and useful for all users."
+    },
+    {
+      "id": "faq010",
+      "question": "How can I contact support for an issue with an app?",
+      "answer": "You can reach out to our support team via the 'Contact Us' section, or directly message the app developer if contact info is available."
+    }
+  ]
+  

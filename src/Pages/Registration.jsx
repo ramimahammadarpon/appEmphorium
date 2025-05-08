@@ -4,7 +4,7 @@ import { AuthContext } from "../Context/AuthContext";
 import { FcGoogle } from "react-icons/fc";
 
 const Registration = () => {
-  const { registerWithMail, setUser, updateInfo, googleSignIn } =
+  const { registerWithMail, setUser, err, setErr, updateInfo, googleSignIn } =
     useContext(AuthContext);
   useEffect(() => {
     document.title = "App Emphorium | Registration";
@@ -23,17 +23,18 @@ const Registration = () => {
         setUser({ ...result.user, displayName: name, photoURL: photoUrl });
         navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setErr(error.message));
   };
 
   const handleGoogleSignIn = () => {
+    setErr("");
     googleSignIn()
       .then((result) => {
         console.log(result);
         setUser(result.user);
         navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setErr(error.message));
   };
   return (
     <div className="hero min-h-[85vh]">
@@ -107,6 +108,7 @@ const Registration = () => {
               </p>
               <button className="btn btn-primary mt-4">Register</button>
             </form>
+            {err&&<p className="text-red-500">{err}</p>}
             <p>
               Already Have an Account?{" "}
               <Link

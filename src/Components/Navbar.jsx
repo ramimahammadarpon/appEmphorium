@@ -27,6 +27,11 @@ const Navbar = () => {
           My Profile
         </NavLink>
       </li>
+      <li>
+        <NavLink className="font-semibold lg:text-xl" to="/faqs">
+          FAQs
+        </NavLink>
+      </li>
     </>
   );
   return (
