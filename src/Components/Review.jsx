@@ -2,12 +2,14 @@ import React from 'react';
 import userImg from '../assets/user.png'
 import { FaStar } from 'react-icons/fa';
 
-const Review = ({review, user}) => {
+const Review = ({user, review}) => {
     console.log(review);
+    console.log(user);
+    // console.log(user.photoURL);
     return (
         <div className='mt-5'>
         <div className='flex items-center gap-2'>
-           {user?  <img className='w-7 rounded-full' src={user.photoURL} alt="" /> :  <img className='w-7 rounded-full' src={userImg} alt="" />}
+           {user?  <img className='w-7 rounded-full aspect-square object-cover' src={user.photoURL} alt="" /> :  <img className='w-7 rounded-full aspect-square object-cover' src={userImg} alt="" />}
             <h4 className='font-semibold text-lg'>{review.user}</h4>
         </div>
         <p className='flex pl-9'>{[...Array(review.rating)].map((_, index)=> <FaStar size={12} color='orange' key={index}></FaStar>)}</p>

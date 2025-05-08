@@ -1,14 +1,15 @@
 import React from "react";
 import { FaDownload, FaStar } from "react-icons/fa";
 import { IoBookSharp } from "react-icons/io5";
+import { Link } from "react-router";
 
 const SwiperCard = ({ data }) => {
   return (
-    <div className="card bg-base-100 image-full shadow-sm">
+    <Link to={`/app-details/${data.id}`} className="card bg-base-100 image-full shadow-sm">
       <figure className="h-[30vh] overflow-hidden rounded-2xl">
         <img
           src={data.banner}
-          alt="Shoes"
+          alt=""
           className="w-full h-full object-cover rounded-2xl"
         />
       </figure>
@@ -23,7 +24,7 @@ const SwiperCard = ({ data }) => {
           <p className="text-base-300 text-lg font-semibold flex items-center gap-1"><FaDownload size={14} color="#E9D8A6" /> {data.downloads}</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

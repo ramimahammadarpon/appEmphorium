@@ -8,8 +8,10 @@ const ReviewsSection = ({ singleData, installed }) => {
   const [reviews, setReviews] = useState([]);
   console.log(rating);
   const {user} = useContext(AuthContext);
-  const handleSubmit = () => {
-    const comment = document.getElementById("text-field").value;
+  console.log(user);
+  const handleSubmit = e => {
+    e.preventDefault();
+    const comment = e.target.comment.value;
     const review = {
         rating,
         comment,
@@ -39,7 +41,7 @@ const ReviewsSection = ({ singleData, installed }) => {
         </h5>
 
         <div>
-          <div className="flex gap-2">
+          <form onSubmit={handleSubmit} className="flex gap-2">
             <img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" />
             <div>
               <input
@@ -47,6 +49,8 @@ const ReviewsSection = ({ singleData, installed }) => {
                 type="text"
                 className="w-full h-12 border p-2 rounded-lg"
                 placeholder="Enter Your Feedback"
+                name="comment"
+                required
               />
               <div className="flex gap-1 mt-2">
                {
@@ -63,10 +67,10 @@ const ReviewsSection = ({ singleData, installed }) => {
               </div>
 
                 <div>
-                    <button onClick={handleSubmit} className="btn btn-primary mt-2">Submit Your Rating</button>
+                    <button type="submit" className="btn btn-primary mt-2">Submit Your Rating</button>
                 </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>: ""}
     </div>

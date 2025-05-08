@@ -1,11 +1,84 @@
-import React from 'react';
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../Context/AuthContext";
 
 const Profile = () => {
-    return (
-        <div>
-            This is Profile
+  const { user, setUser, updateInfo } = useContext(AuthContext);
+  const lastLoginDate = new Date(user.metadata.lastSignInTime).toLocaleString();
+  const firstLoginDate = new Date(user.metadata.creationTime).toLocaleString();
+  const [visible, setVisible] = useState(false);
+  const handleUpdateProfile = e => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const photoUrl = e.target.photoUrl.value;
+    updateInfo({displayName:name, photoURL:photoUrl}).then(()=>{
+        // console.log(result);
+        setUser({...user, displayName:name, photoURL:photoUrl})
+        setVisible(false);
+    }).catch(error=>console.log(error))
+  }
+  //   console.log(date);
+  return (
+    <div>
+      <div className="text-center">
+        <img
+          className="w-48 aspect-square object-cover rounded-full mx-auto"
+          src={user.photoURL}
+          alt={user.photoURL}
+        />
+        <h3 className="text-2xl font-bold mt-2">{user.displayName}</h3>
+      </div>
+      <div className="flex items-center gap-5 mt-6">
+        <div className="space-y-3">
+          <p>User Name:</p>
+          <p>User Email:</p>
+          <p>Last Sign In Time: </p>
+          <p>First SignIn Time: </p>
         </div>
-    );
+        <div className="font-semibold space-y-3">
+          <p>{user.displayName}</p>
+          <p>{user.email}</p>
+          <p>{lastLoginDate}</p>
+          <p>{firstLoginDate}</p>
+        </div>
+      </div>
+      <form onSubmit={handleUpdateProfile} className={`p-3 border border-primary rounded-2xl mt-6 ${visible? "flex": "hidden"}`}>
+        <div className="pt-3">
+          <label className="label">Full Name</label>
+          <input
+            type="text"
+            className="input"
+            name="name"
+            placeholder="Full Name"
+            required
+          />
+          <label className="label">Photo URL</label>
+          <input
+            type="text"
+            className="input"
+            name="photoUrl"
+            placeholder="Photo URL"
+            required
+          />
+          <div className="text-center mt-2">
+            <button
+              className="btn btn-dash btn-primary font-normal text-xs"
+              type="submit"
+            >
+              Save Change
+            </button>
+          </div>
+        </div>
+        <div>
+            <button onClick={()=>setVisible(false)} className="hover:text-orange-400 hover:bg-base-200 text-red-600 py-2 px-4 rounded-2xl" type="button">X</button>
+        </div>
+      </form>
+      <div className="text-center mt-4">
+        {!visible&&<button onClick={()=>setVisible(true)} className="btn btn-primary">
+          Update Name or Profile Picture
+        </button>}
+      </div>
+    </div>
+  );
 };
 
 export default Profile;

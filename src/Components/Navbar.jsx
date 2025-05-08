@@ -5,6 +5,7 @@ import { AuthContext } from "../Context/AuthContext";
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContext);
+  // console.log(user?.photoURL);
   const navigate = useNavigate();
   const handleLogout = () => {
     logOut().then(()=>{
@@ -67,7 +68,7 @@ const Navbar = () => {
           <img className="w-8 h-8 rounded-full" src={user.photoURL} alt="" />
           <button onClick={handleLogout} className="btn btn-primary text-accent">Logout</button>
           </div> : <div className="flex items-center gap-1">
-          <img className="w-12 rounded-full" src={userImg} alt="" />
+          <img className="w-12 aspect-square object-cover rounded-full" src={userImg} alt="" />
           <Link to="/authentication/login" className="btn btn-primary text-accent">Login</Link>
           </div>
         }

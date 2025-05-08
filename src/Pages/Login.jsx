@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-    const {loginWithEmail, setUser} = useContext(AuthContext);
+    const {loginWithEmail, setUser, googleSignIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const handleLogin = e => {
         console.log("This is handle login");
@@ -12,11 +13,19 @@ const Login = () => {
         const password = e.target.password.value;
         console.log(email, password);
         loginWithEmail(email, password).then(result => {
-            setUser(result.user);
+            // setUser(result.user);
             navigate('/');
 
         }).catch(error=> console.log(error));
 
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn().then(result=>{
+          console.log(result);
+          setUser(result.user);
+          navigate('/');
+        }).catch(error=> console.log(error));
     }
   return (
     <div className="hero min-h-[85vh]">
@@ -35,6 +44,8 @@ const Login = () => {
               <button className="btn btn-neutral mt-4">Login</button>
             </form>
             <p>Don't Have any Account? <Link className="text-blue-600 underline font-semibold" to="/authentication/registration">Register Now</Link></p>
+            <p className="text-center">Or</p>
+            <button onClick={handleGoogleSignIn} className="btn btn-outline btn-secondary"><FcGoogle size={20} />Sign In using Google</button>
           </div>
         </div>
       </div>
