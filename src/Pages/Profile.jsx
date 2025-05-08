@@ -22,16 +22,16 @@ const Profile = () => {
   }
   //   console.log(date);
   return (
-    <div>
+    <div className="md:min-h-[60vh]">
       <div className="text-center">
         <img
-          className="w-48 lg:w-80 aspect-square object-cover rounded-full mx-auto"
+          className="w-48 md:w-60 lg:w-80 aspect-square object-cover rounded-full mx-auto"
           src={user.photoURL}
           alt={user.photoURL}
         />
         <h3 className="text-2xl font-bold mt-2">{user.displayName}</h3>
       </div>
-      <div className="flex items-center lg:justify-center lg:gap-20 gap-5 lg:my-10 mt-6">
+      <div className="flex items-center md:justify-center lg:gap-20 gap-5 lg:my-10 mt-6">
         <div className="space-y-3 lg:text-xl">
           <p>User Name:</p>
           <p>User Email:</p>
@@ -45,8 +45,8 @@ const Profile = () => {
           <p>{firstLoginDate}</p>
         </div>
       </div>
-      <form onSubmit={handleUpdateProfile} className={`p-3 border border-primary rounded-2xl w-3/9 mx-auto mt-6 ${visible? "flex": "hidden"}`}>
-        <div className="pt-3 lg:flex lg:flex-col lg:items-center lg:justify-center w-full">
+      <form onSubmit={handleUpdateProfile} className={`p-3 border border-primary rounded-2xl md:w-5/9 lg:3/9 mx-auto mt-6 ${visible? "flex": "hidden"}`}>
+        <div className="pt-3 md:flex md:flex-col md:items-center md:justify-center w-full">
           <label className="label">Full Name</label>
           <input
             type="text"

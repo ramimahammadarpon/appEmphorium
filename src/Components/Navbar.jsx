@@ -71,11 +71,11 @@ const Navbar = () => {
           <Link to="/profile" className="flex items-center gap-3">
             <div className="relative group">
               <img
-                className="w-8 h-8 rounded-full"
-                src={user.photoURL ? user.photURL : userImg}
+                className="w-8 md:w-12 aspect-square rounded-full"
+                src={user.photoURL ? user.photoURL : userImg}
                 alt=""
               />
-              <p className="absolute opacity-0 group-hover:opacity-100 text-primary left-1/2 -translate-x-1/2 transition">{user.displayName}</p>
+              <p className="absolute top-14 opacity-0 group-hover:opacity-100 text-primary left-1/2 -translate-x-1/2 transition">{user.displayName}</p>
             </div>
             <button
               onClick={handleLogout}

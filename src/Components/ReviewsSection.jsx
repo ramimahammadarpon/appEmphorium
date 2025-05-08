@@ -55,16 +55,16 @@ const ReviewsSection = ({ singleData, installed }) => {
               <div className="flex gap-1 mt-2">
                {
                 [1,2,3,4,5].map(star =>{
-                    if(star<=rating){
-                        return <div>
-                          <FaStar className="lg:hidden" key={star} size={24} color="orange" onClick={()=>setRating(star)}/>
-                          <FaStar className=" hidden lg:inline-block" key={star} size={40} color="orange" onClick={()=>setRating(star)}/>
+                    if((star)<=rating){
+                        return <div key={star}>
+                          <FaStar className="lg:hidden"  size={24} color="orange" onClick={()=>setRating(star)}/>
+                          <FaStar className=" hidden lg:inline-block" size={40} color="orange" onClick={()=>setRating(star)}/>
                           </div> 
                     }
                     else{
-                        return <div>
-                          <FaRegStar className="lg:hidden" key={star} size={24} color="orange" onClick={()=> setRating(star)}/>
-                          <FaRegStar className=" hidden lg:inline-block" key={star} size={40} color="orange" onClick={()=> setRating(star)}/>
+                        return <div key={star}>
+                          <FaRegStar className="lg:hidden" size={24} color="orange" onClick={()=> setRating(star)}/>
+                          <FaRegStar className=" hidden lg:inline-block"  size={40} color="orange" onClick={()=> setRating(star)}/>
                         </div>
                     }
                 })

@@ -7,7 +7,7 @@ const Cards = ({singleData}) => {
     return (
         <Link to={`/app-details/${singleData.id}`} className='flex flex-col items-center lg:items-start lg:text-left text-center py-1 lg:p-2 bg-base-200 rounded-sm lg:rounded-lg'>
         {/* Apps Icon */}
-        <img className='w-18 h-12 lg:w-full lg:h-60 object-cover rounded-lg' src={singleData.banner} alt="" />
+        <img className='w-18 h-12 md:w-full md:h-40 lg:h-60 object-cover rounded-lg' src={singleData.banner} alt="" />
         <div className='mt-2 '>
             <h4 className='font-semibold lg:font-bold lg:text-xl text-primary lg:pl-3'>{singleData.name}</h4>
             <div className='lg:pl-3'>

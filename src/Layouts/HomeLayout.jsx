@@ -2,6 +2,7 @@ import Navbar from '../Components/Navbar';
 import { Outlet } from 'react-router';
 import Footer from '../Components/Footer';
 import { AuthContext } from '../Context/AuthContext';
+import MyOwn from '../Components/MyOwn';
 
 const HomeLayout = () => {
     return (
@@ -13,7 +14,10 @@ const HomeLayout = () => {
             <main className='my-5 mx-5 lg:my-10 lg:mx-20'>
                 <Outlet></Outlet>
             </main>
-            <footer className='lg:py-16 py-10 bg-[#001524]'>
+            <section>
+                <MyOwn></MyOwn>
+            </section>
+            <footer>
                 <Footer></Footer>
             </footer>
         </div>
