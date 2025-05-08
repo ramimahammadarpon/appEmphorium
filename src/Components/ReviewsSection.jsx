@@ -6,9 +6,7 @@ import { AuthContext } from "../Context/AuthContext";
 const ReviewsSection = ({ singleData, installed }) => {
   const [rating, setRating] = useState(0);
   const [reviews, setReviews] = useState([]);
-  console.log(rating);
   const {user} = useContext(AuthContext);
-  console.log(user);
   const handleSubmit = e => {
     e.preventDefault();
     const comment = e.target.comment.value;

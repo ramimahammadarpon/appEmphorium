@@ -19,6 +19,9 @@ const Footer = () => {
           <Link className="text-secondary" to="/profile">
             My Profile
           </Link>
+          <Link className="text-secondary" to="/faqs">
+          FAQs
+        </Link>
         </div>
         <div className="text-secondary px-5 flex flex-col">
           <a href="#">Terms and Services</a>

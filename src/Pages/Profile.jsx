@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 
 const Profile = () => {
-  const { user, setUser, updateInfo } = useContext(AuthContext);
+  const { user, setErr, setUser, updateInfo } = useContext(AuthContext);
   const lastLoginDate = new Date(user.metadata.lastSignInTime).toLocaleString();
   const firstLoginDate = new Date(user.metadata.creationTime).toLocaleString();
   const [visible, setVisible] = useState(false);
@@ -15,12 +15,10 @@ const Profile = () => {
     const name = e.target.name.value;
     const photoUrl = e.target.photoUrl.value;
     updateInfo({displayName:name, photoURL:photoUrl}).then(()=>{
-        // console.log(result);
         setUser({...user, displayName:name, photoURL:photoUrl})
         setVisible(false);
-    }).catch(error=>console.log(error))
+    }).catch(error=>setErr(error.message))
   }
-  //   console.log(date);
   return (
     <div className="md:min-h-[60vh]">
       <div className="text-center">

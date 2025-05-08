@@ -3,9 +3,6 @@ import userImg from '../assets/user.png'
 import { FaStar } from 'react-icons/fa';
 
 const Review = ({user, review}) => {
-    console.log(review);
-    console.log(user);
-    // console.log(user.photoURL);
     return (
         <div className='mt-5'>
         <div className='flex items-center gap-2'>

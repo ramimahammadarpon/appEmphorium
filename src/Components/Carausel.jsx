@@ -10,7 +10,6 @@ const Carausel = ({datas}) => {
     const [sorted, setSorted] = useState([]);
     useEffect(()=>{
         const sortedDatas = [...datas].sort((a,b)=> b.releasedYear-a.releasedYear).slice(0, 4);
-        console.log(sortedDatas);
         setSorted(sortedDatas);
     }, [datas])
     return (

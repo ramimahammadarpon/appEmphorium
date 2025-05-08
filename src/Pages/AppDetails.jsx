@@ -7,8 +7,6 @@ const AppDetails = () => {
   const [installed, setInstalled] = useState([]);
   const [button, setButton] = useState(true);
   const [singleData, setSingleData] = useState([]);
-  console.log(singleData.features);
-  console.log(installed);
 
   const handleInstall = () => {
     const installedArr = [...installed, "yes"];

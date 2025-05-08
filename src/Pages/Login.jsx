@@ -10,51 +10,38 @@ const Login = () => {
   const navigate = useNavigate();
   useEffect(() => {
     document.title = "App Emphorium | Login";
-  }, []);
+    setErr('');
+  }, [setErr]);
   const handleLogin = (e) => {
     setErr("");
-    console.log("This is handle login");
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
     loginWithEmail(email, password)
       .then((result) => {
         setUser(result.user);
-        toast.success("Logged In Successfully", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        toast.success("Logged In Successfully");
         
         navigate("/");
       })
-      .catch((error) => setErr(error.message));
+      .catch((error) => {
+        setErr(error.message);
+        toast.error("Sorry! Couldn't Log In");
+      });
   };
 
   const handleGoogleSignIn = () => {
     setErr("");
     googleSignIn()
       .then((result) => {
-        toast.success("Signned In Successfully", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        toast.success("Signned In Successfully");
         setUser(result.user);
         navigate("/");
       })
-      .catch((error) => setErr(error.message));
+      .catch((error) => {
+        setErr(error.message)
+        toast.error("Sorry! Couldn't Sign In");
+      });
   };
   const handleForgetPassword = () => {
     setErr("");
@@ -71,7 +58,6 @@ const Login = () => {
           progress: undefined,
           theme: "light",
         });
-        console.log("password reset done");
       })
       .catch((error) => setErr(error.message));
   };
@@ -89,6 +75,7 @@ const Login = () => {
                 className="input"
                 name="email"
                 placeholder="Email"
+                required
               />
               <label className="label">Password</label>
               <input

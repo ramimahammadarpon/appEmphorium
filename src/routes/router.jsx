@@ -34,6 +34,16 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: "faqs",
+        element: <Faqs></Faqs>,
+        loader: () => fetch("/faq.json"),
+        hydrateFallbackElement: (
+          <div className="min-h-[80vh] flex justify-center items-center">
+            <span className="loading loading-bars loading-xl"></span>
+          </div>
+        ),
+      },
+      {
         path: "app-details/:id",
         element: (
           <PrivateRoute>
@@ -62,16 +72,6 @@ export const router = createBrowserRouter([
         element: <Registration></Registration>,
       },
     ],
-  },
-  {
-    path: "faqs",
-    element: <Faqs></Faqs>,
-    loader: () => fetch("/faq.json"),
-    hydrateFallbackElement: (
-      <div className="min-h-[80vh] flex justify-center items-center">
-        <span className="loading loading-bars loading-xl"></span>
-      </div>
-    ),
   },
   {
     path: "/*",

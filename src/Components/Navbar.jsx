@@ -2,18 +2,18 @@ import React, { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
 import userImg from "../assets/user.png";
 import { AuthContext } from "../Context/AuthContext";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  // console.log(user?.photoURL);
   const navigate = useNavigate();
   const handleLogout = () => {
     logOut()
       .then(() => {
-        console.log("Your Logged Out");
+        toast.success("Logged Out Successfully");
         navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) =>  toast.success("Logged Out Successfully"));
   };
   const links = (
     <>

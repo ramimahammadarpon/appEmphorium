@@ -2,13 +2,15 @@ import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 const Registration = () => {
   const { registerWithMail, setUser, err, setErr, updateInfo, googleSignIn } =
     useContext(AuthContext);
   useEffect(() => {
     document.title = "App Emphorium | Registration";
-  }, []);
+    setErr("");
+  }, [setErr]);
   const navigate = useNavigate();
   const handleRegistration = (e) => {
     e.preventDefault();
@@ -16,25 +18,31 @@ const Registration = () => {
     const photoUrl = e.target.photoUrl.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, photoUrl, email, password);
     registerWithMail(email, password)
       .then((result) => {
         updateInfo({ displayName: name, photoURL: photoUrl });
         setUser({ ...result.user, displayName: name, photoURL: photoUrl });
+        toast.success("Signned Up Successfully");
         navigate("/");
       })
-      .catch((error) => setErr(error.message));
+      .catch((error) => {
+        setErr(error.message);
+        toast.error("Sorry! Couldn't Sign In");
+      });
   };
 
   const handleGoogleSignIn = () => {
     setErr("");
     googleSignIn()
       .then((result) => {
-        console.log(result);
+        toast.success("Signned In Successfully");
         setUser(result.user);
         navigate("/");
       })
-      .catch((error) => setErr(error.message));
+      .catch((error) => {
+        setErr(error.message);
+        toast.error("Sorry! Couldn't Log In");
+      });
   };
   return (
     <div className="hero min-h-[85vh]">
@@ -108,7 +116,7 @@ const Registration = () => {
               </p>
               <button className="btn btn-primary mt-4">Register</button>
             </form>
-            {err&&<p className="text-red-500">{err}</p>}
+            {err && <p className="text-red-500">{err}</p>}
             <p>
               Already Have an Account?{" "}
               <Link
