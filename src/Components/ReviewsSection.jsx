@@ -25,9 +25,9 @@ const ReviewsSection = ({ singleData, installed }) => {
   }
   return (
     <div className="mb-6">
-      <h3 className="font-semibold text-xl text-primary">Our Client's Say</h3>
+      <h3 className="font-semibold text-xl lg:text-3xl text-primary">Our Client's Say</h3>
       <div>
-        {singleData.reviews.map((review, index) => (
+        {singleData?.reviews?.map((review, index) => (
           <Review key={index} review={review}></Review>
         ))}
 
@@ -43,11 +43,11 @@ const ReviewsSection = ({ singleData, installed }) => {
         <div>
           <form onSubmit={handleSubmit} className="flex gap-2">
             <img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" />
-            <div>
+            <div className="lg:w-1/3">
               <input
                 id="text-field"
                 type="text"
-                className="w-full h-12 border p-2 rounded-lg"
+                className="w-full h-12 lg:h-24 border p-2 rounded-lg"
                 placeholder="Enter Your Feedback"
                 name="comment"
                 required
@@ -56,10 +56,16 @@ const ReviewsSection = ({ singleData, installed }) => {
                {
                 [1,2,3,4,5].map(star =>{
                     if(star<=rating){
-                        return <FaStar key={star} size={24} color="orange" onClick={()=>setRating(star)}/> 
+                        return <div>
+                          <FaStar className="lg:hidden" key={star} size={24} color="orange" onClick={()=>setRating(star)}/>
+                          <FaStar className=" hidden lg:inline-block" key={star} size={40} color="orange" onClick={()=>setRating(star)}/>
+                          </div> 
                     }
                     else{
-                        return <FaRegStar key={star} size={24} color="orange" onClick={()=> setRating(star)}/>
+                        return <div>
+                          <FaRegStar className="lg:hidden" key={star} size={24} color="orange" onClick={()=> setRating(star)}/>
+                          <FaRegStar className=" hidden lg:inline-block" key={star} size={40} color="orange" onClick={()=> setRating(star)}/>
+                        </div>
                     }
                 })
                }
@@ -67,7 +73,7 @@ const ReviewsSection = ({ singleData, installed }) => {
               </div>
 
                 <div>
-                    <button type="submit" className="btn btn-primary mt-2">Submit Your Rating</button>
+                    <button type="submit" className="btn btn-primary mt-2 lg:text-xl">Submit Your Rating</button>
                 </div>
             </div>
           </form>

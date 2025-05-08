@@ -1,7 +1,7 @@
 import CardsContainer from '../Components/CardsContainer';
 import Carausel from '../Components/Carausel';
 import { useLoaderData } from 'react-router';
-import { use } from 'react';
+import { use, useEffect } from 'react';
 
 
 
@@ -10,6 +10,9 @@ const sectionCategories = fetch('/categories.json').then(res => res.json());
 const Home = () => {
     const categoriesData = use(sectionCategories); 
     const datas = useLoaderData();
+    useEffect(()=>{
+        document.title = "App Emphorium | Home"
+    },[])
 
     return (
         <div>

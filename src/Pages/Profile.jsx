@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 
 const Profile = () => {
@@ -6,6 +6,10 @@ const Profile = () => {
   const lastLoginDate = new Date(user.metadata.lastSignInTime).toLocaleString();
   const firstLoginDate = new Date(user.metadata.creationTime).toLocaleString();
   const [visible, setVisible] = useState(false);
+  useEffect(()=>{
+          document.title = `App Emphorium | ${user.name}`
+      },[user.name])
+  
   const handleUpdateProfile = e => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -21,28 +25,28 @@ const Profile = () => {
     <div>
       <div className="text-center">
         <img
-          className="w-48 aspect-square object-cover rounded-full mx-auto"
+          className="w-48 lg:w-80 aspect-square object-cover rounded-full mx-auto"
           src={user.photoURL}
           alt={user.photoURL}
         />
         <h3 className="text-2xl font-bold mt-2">{user.displayName}</h3>
       </div>
-      <div className="flex items-center gap-5 mt-6">
-        <div className="space-y-3">
+      <div className="flex items-center lg:justify-center lg:gap-20 gap-5 lg:my-10 mt-6">
+        <div className="space-y-3 lg:text-xl">
           <p>User Name:</p>
           <p>User Email:</p>
           <p>Last Sign In Time: </p>
           <p>First SignIn Time: </p>
         </div>
-        <div className="font-semibold space-y-3">
+        <div className="font-semibold space-y-3 lg:text-xl">
           <p>{user.displayName}</p>
           <p>{user.email}</p>
           <p>{lastLoginDate}</p>
           <p>{firstLoginDate}</p>
         </div>
       </div>
-      <form onSubmit={handleUpdateProfile} className={`p-3 border border-primary rounded-2xl mt-6 ${visible? "flex": "hidden"}`}>
-        <div className="pt-3">
+      <form onSubmit={handleUpdateProfile} className={`p-3 border border-primary rounded-2xl w-3/9 mx-auto mt-6 ${visible? "flex": "hidden"}`}>
+        <div className="pt-3 lg:flex lg:flex-col lg:items-center lg:justify-center w-full">
           <label className="label">Full Name</label>
           <input
             type="text"

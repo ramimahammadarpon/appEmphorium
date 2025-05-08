@@ -6,7 +6,7 @@ import { Link } from "react-router";
 const SwiperCard = ({ data }) => {
   return (
     <Link to={`/app-details/${data.id}`} className="card bg-base-100 image-full shadow-sm">
-      <figure className="h-[30vh] overflow-hidden rounded-2xl">
+      <figure className="h-[30vh] lg:h-[70vh] overflow-hidden rounded-2xl">
         <img
           src={data.banner}
           alt=""

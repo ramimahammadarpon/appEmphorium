@@ -16,12 +16,12 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink className="font-semibold" to="/">
+        <NavLink className="font-semibold lg:text-xl" to="/">
           Apps
         </NavLink>
       </li>
       <li>
-        <NavLink className="font-semibold" to="/profile">
+        <NavLink className="font-semibold lg:text-xl" to="/profile">
           My Profile
         </NavLink>
       </li>
@@ -55,7 +55,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <p className="font-light text-xl text-primary">
+        <p className="font-light text-xl lg:text-3xl text-primary">
           App<span className="font-bold text-secondary">Emporium</span>
         </p>
       </div>
@@ -64,12 +64,16 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {
-          user? <div className="flex items-center gap-1">
-          <img className="w-8 h-8 rounded-full" src={user.photoURL} alt="" />
+          user? <div className="flex items-center gap-3">
+          <img className="w-8 h-8 rounded-full" src={user.photoURL? user.photURL: userImg} alt="" />
+          <div className="hidden lg:block bg-slate-200 px-3 py-1 rounded-2xl">
+            <p className="font-semibold">{user.displayName}</p>
+            <p className="text-slate-500">{user.email}</p>
+            </div>
           <button onClick={handleLogout} className="btn btn-primary text-accent">Logout</button>
-          </div> : <div className="flex items-center gap-1">
-          <img className="w-12 aspect-square object-cover rounded-full" src={userImg} alt="" />
+          </div> : <div className="flex items-center gap-3">
           <Link to="/authentication/login" className="btn btn-primary text-accent">Login</Link>
+          <Link to="/authentication/registration" className="btn btn-secondary text-blue-100">Registration</Link>
           </div>
         }
       </div>

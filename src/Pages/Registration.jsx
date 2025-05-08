@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import { FcGoogle } from "react-icons/fc";
 
 const Registration = () => {
   const { registerWithMail, setUser, updateInfo, googleSignIn } = useContext(AuthContext);
+  useEffect(()=>{
+        document.title = "App Emphorium | Registration"
+      },[]);
   const navigate = useNavigate();
   const handleRegistration = (e) => {
     e.preventDefault();
@@ -33,8 +36,8 @@ const Registration = () => {
   };
   return (
     <div className="hero min-h-[85vh]">
-      <div className=" flex-col lg:flex-row-reverse w-11/12">
-        <div className="card bg-base-100 w-full max-w-sm shadow-2xl border">
+      <div className="mx-auto w-11/12">
+        <div className="card bg-base-200 mx-auto w-full max-w-sm shadow-2xl">
           <div className="card-body">
             <h1 className="text-2xl font-bold">Register now!</h1>
             <form onSubmit={handleRegistration} className="fieldset">
@@ -70,7 +73,7 @@ const Registration = () => {
                 placeholder="Password"
                 required
               />
-              <button className="btn btn-neutral mt-4">Register</button>
+              <button className="btn btn-primary mt-4">Register</button>
             </form>
             <p>
               Already Have an Account?{" "}

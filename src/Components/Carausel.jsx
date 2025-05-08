@@ -15,7 +15,7 @@ const Carausel = ({datas}) => {
     }, [datas])
     return (
        <div>
-        <h1 className='font-semibold text-lg mb-4 text-primary'>Newly Launched Apps</h1>
+        <h1 className='font-semibold lg:font-bold text-lg lg:text-3xl mb-4 text-primary'>Newly Launched Apps</h1>
          <Swiper navigation pagination={{clickable:true}} modules={[Navigation, Pagination, Autoplay]} slidesPerView={1} spaceBetween={50} loop={true} autoplay={{delay: 2000}} className='h-[30vh] lg:h-[70vh]'>
             
             {

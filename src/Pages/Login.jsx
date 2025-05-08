@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import { FcGoogle } from "react-icons/fc";
@@ -6,6 +6,9 @@ import { FcGoogle } from "react-icons/fc";
 const Login = () => {
     const {loginWithEmail, setUser, googleSignIn} = useContext(AuthContext);
     const navigate = useNavigate();
+    useEffect(()=>{
+      document.title = "App Emphorium | Login"
+    },[]);
     const handleLogin = e => {
         console.log("This is handle login");
         e.preventDefault();
@@ -13,7 +16,7 @@ const Login = () => {
         const password = e.target.password.value;
         console.log(email, password);
         loginWithEmail(email, password).then(result => {
-            // setUser(result.user);
+            setUser(result.user);
             navigate('/');
 
         }).catch(error=> console.log(error));
@@ -29,8 +32,8 @@ const Login = () => {
     }
   return (
     <div className="hero min-h-[85vh]">
-      <div className=" flex-col lg:flex-row-reverse w-11/12">
-        <div className="card bg-base-100 w-full max-w-sm shadow-2xl border">
+      <div className="w-11/12 mx-auto">
+        <div className="card bg-base-200 w-full max-w-sm shadow-2xl mx-auto">
           <div className="card-body">
           <h1 className="text-2xl font-bold">Login now!</h1>
             <form onSubmit={handleLogin} className="fieldset">
@@ -41,7 +44,7 @@ const Login = () => {
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
-              <button className="btn btn-neutral mt-4">Login</button>
+              <button className="btn btn-primary mt-4">Login</button>
             </form>
             <p>Don't Have any Account? <Link className="text-blue-600 underline font-semibold" to="/authentication/registration">Register Now</Link></p>
             <p className="text-center">Or</p>
