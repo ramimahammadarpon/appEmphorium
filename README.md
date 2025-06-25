@@ -7,9 +7,12 @@ The project focuses on creating an AppStore Platform that allows users to discov
 ![academiaPro Screenshot](https://i.ibb.co/ycqdgFv0/image.png)
 
 
-## Our Purpose:
+## 🛠️ Built With
 
-This is a Vite-react Project to give Out clients a User friendly experiences.
+- React.js
+- Tailwind CSS
+- Firebase
+
 
 ## Live Link:
 
@@ -19,17 +22,22 @@ https://ramim-ahammad-b11-a9-app-store.netlify.app/
 ## Key Features: 
 
 Key Features of this Project are, Authentication, routing, swiper, toasters and several other's Features have been included.
+1. Responsive and user friendly UI.
+3. Added rating and put some conditions on the functionality
+5. Users Have to login to access private route.
 
-## Packages Used:
 
-    "@tailwindcss/vite": "^4.1.5",
-    "firebase": "^11.6.1",
-    "react": "^19.1.0",
-    "react-countup": "^6.5.3",
-    "react-dom": "^19.1.0",
-    "react-icons": "^5.5.0",
-    "react-rating": "^2.0.5",
-    "react-router": "^7.5.3",
-    "react-toastify": "^11.0.5",
-    "swiper": "^11.2.6",
-    "tailwindcss": "^4.1.5"
+## 📦 Dependencies
+
+| Package            | Version    |
+|--------------------|------------|
+| @tailwindcss/vite  | ^4.1.5     |
+| firebase           | ^11.6.1    |
+| react              | ^19.1.0    |
+| react-countup      | ^6.5.3     |
+| react-dom          | ^19.1.0    |
+| react-icons        | ^5.5.0     |
+| react-router       | ^7.6.2     |
+| react-toastify     | ^11.0.5    |
+| swiper             | ^11.2.6    |
+| tailwindcss        | ^4.1.8     |
