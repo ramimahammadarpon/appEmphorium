@@ -4,7 +4,7 @@ The project focuses on creating an AppStore Platform that allows users to discov
 
 ## 🖼️ Screenshot
 
-![academiaPro Screenshot](https://i.ibb.co/cStbmj3J/image.png)
+![academiaPro Screenshot](https://i.ibb.co/ycqdgFv0/image.png)
 
 
 ## Our Purpose:
