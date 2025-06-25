@@ -37,6 +37,23 @@ Key Features of this Project are, Authentication, routing, swiper, toasters and 
 | swiper             | ^11.2.6    |
 | tailwindcss        | ^4.1.8     |
 
+
+## Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/ramimahammadarpon/appEmphorium.git
+
+# Navigate to the project directory
+cd appEmphorium
+
+# Install frontend dependencies
+npm install
+
+# Start the frontend development server
+npm run dev
+```
+
 ## Live Link:
 
 https://ramim-ahammad-b11-a9-app-store.netlify.app/
