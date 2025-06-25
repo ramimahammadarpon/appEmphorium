@@ -14,11 +14,6 @@ The project focuses on creating an AppStore Platform that allows users to discov
 - Firebase
 
 
-## Live Link:
-
-https://ramim-ahammad-b11-a9-app-store.netlify.app/
-
-
 ## Key Features: 
 
 Key Features of this Project are, Authentication, routing, swiper, toasters and several other's Features have been included.
@@ -41,3 +36,8 @@ Key Features of this Project are, Authentication, routing, swiper, toasters and 
 | react-toastify     | ^11.0.5    |
 | swiper             | ^11.2.6    |
 | tailwindcss        | ^4.1.8     |
+
+## Live Link:
+
+https://ramim-ahammad-b11-a9-app-store.netlify.app/
+
