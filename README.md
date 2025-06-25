@@ -2,6 +2,11 @@
 
 The project focuses on creating an AppStore Platform that allows users to discover, install, and review apps tailored to their interests. The platform offers Trending Apps, Categorized Browsing, and User Reviews.  The goal is to deliver user-centric appstore that promotes engagement and simplifies app management.
 
+## 🖼️ Screenshot
+
+![academiaPro Screenshot](https://i.ibb.co/cStbmj3J/image.png)
+
+
 ## Our Purpose:
 
 This is a Vite-react Project to give Out clients a User friendly experiences.
